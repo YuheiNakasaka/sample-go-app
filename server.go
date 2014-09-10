@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/go-martini/martini"
+	"time"
 )
 
 func main() {
@@ -11,5 +12,6 @@ func main() {
 }
 
 func top(params martini.Params) (int, string) {
-	return 200, "Hello World!"
+	t := time.Now()
+	return 200, "Hello World!\n" + t.Format("2006/01/02 15:04:05")
 }
